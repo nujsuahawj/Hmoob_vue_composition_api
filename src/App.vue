@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <h1>Option Style</h1>
+  <button @click="onClick">{{counter}}</button>
+  <hr>
+  <Demo1RefAndReactive/>
+
+  <hr>
+  <Demo2CounterHook/>
+
+  <hr>
+  <Demo3LifeCycleHooks/>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Demo1RefAndReactive from "./components/Demo1RefAndReactive"
+import Demo2CounterHook from "./components/Demo2CounterHook"
+import Demo3LifeCycleHooks from "./components/Demo3LifeCycleHooks"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components:{Demo1RefAndReactive, Demo2CounterHook, Demo3LifeCycleHooks},
+  
+  data() {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    onClick(){
+      this.counter++
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
